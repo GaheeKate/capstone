@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Quattrocento:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Cinzel', 'Quattrocento', Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cinzel', sans-serif;
+    text-align: center;
+
+}
+
+
+.margin {
+    margin-top: 100px !important;
+    margin-bottom: 20px !important;
+}
+
+
+
+P {
+    font-family: 'Quattrocento', sans-serif;
+    text-align: center;
+    padding: 1em;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E24A07;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+
+.btn.btn-success {
+    background-color: #A3B40E;
+    border-color: #A3B40E;
+}
+
+div.col li {
+    text-align: left;
+    padding: 1em;
+}
+
+
+li {
+    float: left;
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.desc {
+    margin-bottom: 3em !important;
+
+}
+
+
+
+
+
+li a:hover {
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.site-name {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    letter-spacing: 0.5em;
+    color: RGB(12, 64, 82);
+}
+
+.slide_wrapper {
+    width: 960px;
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    left: 0;
+    top: 0;
+    list-style: none;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 10px !important;
+
+
+}
+
+.card {
+
+    margin: 0 auto;
+    padding: 0;
+}
+
+section {
+    background-color: RGB(255, 145, 54);
+    padding: 2em;
+    margin-top: 5em;
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    transition: ease;
+    transition-duration: 0.3s;
+}
+
+.slides.animated {
+    transition: 0.5s ease-out;
+    transition-duration: 2s;
+
+}
+
+.slides li {
+    width: 300px;
+    height: 300px;
+    float: left;
+}
+
+.slides li:not(:last-child) {
+    margin-right: 26px;
+}
+
+.slides img {
+    border-radius: 1em;
+}
+
+.row.row-cols-1.row-cols-md-3.g-4 img {
+    width: 100%;
+    height: 200px;
+}
+
+#section_chef {
+    margin-bottom: 1em;
+}

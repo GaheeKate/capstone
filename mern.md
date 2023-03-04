@@ -1,0 +1,9 @@
+- HTTP Request
+- Middleware Functions
+  - one or more functions that are placed in the path of requests that are received by our backend API
+  - Middleware adds: additional functionality for the API or preliminary request processing
+  - Types: 
+    - Built-in
+    - Custom
+    - 3rd Party
+- API response 
