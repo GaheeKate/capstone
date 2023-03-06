@@ -1,3 +1,6 @@
+//allow to use dotenv throughout the package
+require('dotenv').config()
+
 const express = require("express")
 const app = express()
 const path = require('path')
@@ -5,11 +8,15 @@ const errorHandler = require('./middleware/errorHandler')
 const { logger } = require('./middleware/logger')
 const cookieParser = require('cookie-parser') //3rd party middleware
 const cors = require('cors')
+const corsOptions = require('./config/corsOptions')
 const PORT = process.env.PORT || 8888
 
-
+const dbUrl = process.env.ClientID
+const client = new MongoClient(dbUrl);
 
 app.use(logger)
+
+app.use(cors(corsOptions))
 
 app.use(cors())
 

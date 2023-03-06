@@ -6,7 +6,8 @@
 3. [ ] Provide a page for login
 4. [ ] Provide easy navigation
 5. [ ] Provide a logout option
-6. [ ] Provide a logout option
+6. [ ] Provide a way to remove admin access asap if needed
+7. [ ] Mobile mode should be available as well
 ---------------
 
 #### 1. As a first-time user of the MBTI website, I want a clear and concise explanation of what MBTI is and how it can benefit me in my personal and professional life.
