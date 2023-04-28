@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const AutoIncrement = require('mongoose-sequence')(mongoose)
 
-//schema to have data models
+
 const NoteSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -20,7 +21,17 @@ const NoteSchema = new mongoose.Schema({
         default: false
     }
 
-})
+},
+    {
+        timestamps: true
+    }
+)
 
+
+NoteSchema.plugin(AutoIncrement, {
+    inc_field: 'ticket',
+    id: 'ticketNums',
+    start_seq: 100
+})
 
 module.exports = mongoose.model('Note', NoteSchema)
