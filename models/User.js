@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+//schema to have data models
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -11,12 +12,14 @@ const userSchema = new mongoose.Schema({
     },
     roles: [{
         type: String,
-        default: "Employee"
+        default: "User"
     }],
     active: {
         type: Boolean,
         default: true
     }
+
 })
+
 
 module.exports = mongoose.model('User', userSchema)
