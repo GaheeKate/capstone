@@ -1,5 +1,5 @@
 //allow to use dotenv throughout the package
-require('dotenv').config()
+require('dotenv').config();
 
 const express = require("express")
 const app = express()
@@ -14,8 +14,13 @@ const mongoose = require('mongoose')
 const { logEvents } = require('./middleware/logger')
 
 
+console.log(process.env.NODE_ENV)
+console.log(process.env.ACCESS_TOKEN_SECRET);
+console.log(process.env.REFRESH_ACCESS_TOKEN_SECRET);
+
 
 const PORT = process.env.PORT || 8888
+
 
 
 connectDB()
@@ -32,8 +37,15 @@ app.use(cookieParser())
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 
+// q, a, r
 app.use('/', require('./routes/root'))
 app.use('/users', require('./routes/userRoutes'))
+app.use('/auth', require('./routes/authRoutes'))
+app.use('/notes', require('./routes/noteRoutes'))
+app.use('/results', require('./routes/resultRoutes'))
+app.use('/answers', require('./routes/answerRoutes'))
+
+
 
 //404 page
 app.all('*', (req, res) => {
