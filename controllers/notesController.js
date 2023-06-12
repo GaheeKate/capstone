@@ -10,12 +10,10 @@ const getAllNotes = async (req, res) => {
 
   // If no notes
   if (!notes?.length) {
-    return res.status(400).json({ message: "No notes found" });
+    return res.status(400).json({ message: "No results found" });
   }
 
   // Add username to each note before sending the response
-  // See Promise.all with map() here: https://youtu.be/4lqJBBEpjRE
-  // You could also do this with a for...of loop
   const notesWithUser = await Promise.all(
     notes.map(async (note) => {
       const user = await User.findById(note.user).lean().exec();
@@ -73,7 +71,7 @@ const updateNote = async (req, res) => {
   const note = await Note.findById(id).exec();
 
   if (!note) {
-    return res.status(400).json({ message: "Note not found" });
+    return res.status(400).json({ message: "Result not found" });
   }
 
   // Check for duplicate title
@@ -84,7 +82,7 @@ const updateNote = async (req, res) => {
 
   // Allow renaming of the original note
   if (duplicate && duplicate?._id.toString() !== id) {
-    return res.status(409).json({ message: "Duplicate note title" });
+    return res.status(409).json({ message: "Duplicate Result title" });
   }
 
   note.user = user;
@@ -105,19 +103,19 @@ const deleteNote = async (req, res) => {
 
   // Confirm data
   if (!id) {
-    return res.status(400).json({ message: "Note ID required" });
+    return res.status(400).json({ message: "Result ID required" });
   }
 
   // Confirm note exists to delete
   const note = await Note.findById(id).exec();
 
   if (!note) {
-    return res.status(400).json({ message: "Note not found" });
+    return res.status(400).json({ message: "Result not found" });
   }
 
   const result = await note.deleteOne();
 
-  const reply = `Note '${result.title}' with ID ${result._id} deleted`;
+  const reply = `Result '${result.title}' with ID ${result._id} deleted`;
 
   res.json(reply);
 };
