@@ -1,7 +1,6 @@
 const allowedOrigins = [
-  "http://localhost:3000",
-  "https://www.mbti.com",
-  "http://mbti.com",
+  "http://localhost:8888",
+  "https://capstone-frontend-five.vercel.app/",
 ];
 
 module.exports = allowedOrigins;
